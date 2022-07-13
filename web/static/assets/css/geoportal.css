@@ -1,0 +1,73 @@
+
+.geoportal__container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.sidebar {
+    padding: 1rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-size: 5px 5px;
+    background-image: radial-gradient(rgba(31, 41, 55, 0.2) 0.5px, rgb(242, 242, 242) 0.5px);
+    border-right: var(--border-size) solid var(--border-color);
+}
+
+
+.sidebar__option-title {
+    background-color: white;
+    border: var(--border-size) solid var(--border-color);
+    cursor: pointer;
+    display: block;
+    font-weight: bolder;
+    padding: 0.5rem 1rem;
+    text-align: initial;
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+    width: 100%;
+}
+
+.sidebar__option-title i {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    width: 2rem;
+}
+
+.active, .sidebar__option-title:hover {
+    border-color: var(--border-color);
+    background-color: var(--border-color);
+}
+
+
+.sidebar__option-panel {
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    padding: 1rem;
+    border: var(--border-size) solid var(--border-color);
+}
+
+.sidebar-table {
+    border-collapse: collapse;
+    display: table;
+    position: relative;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.sidebar-table tr td .button {
+    border-radius: 0.2rem;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+}
+
+#map {
+    flex: auto;
+}
+

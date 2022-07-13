@@ -1,0 +1,21 @@
+.footer {
+    background-color: #212121;
+    color: white;
+    padding: 1rem;
+}
+
+.footer__container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+}
+
+.footer__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer__subtitle {
+    font-size: 1rem;
+    font-weight: lighter;
+}

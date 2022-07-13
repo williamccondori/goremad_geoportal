@@ -1,0 +1,85 @@
+{% extends "geoportal/_base.html" %}
+{% load static %}
+{% block title %}
+    GEOPORTAL
+{% endblock %}
+
+{% block content %}
+    <div class="geoportal__container">
+        <div class="sidebar">
+            GEOPORTAL GOREMAD
+            <div class="sidebar__option">
+                <button type="button" class="sidebar__option-title">
+                    <i class="fa fa-map"></i> TODAS LAS CAPAS
+                </button>
+                <div class="sidebar__option-panel">
+                    <button class="button">
+                        Agregar capa personalizada
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar__option">
+                <button type="button" class="sidebar__option-title">
+                    <i class="fa fa-globe"></i> SERVICIOS EXTERNOS
+                </button>
+                <div class="sidebar__option-panel">
+                    <button class="button">
+                        Agregar capa personalizada
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar__option">
+                <button type="button" class="sidebar__option-title">
+                    <i class="fa fa-map-marker"></i> MARCADORES
+                </button>
+                <div class="sidebar__option-panel">
+                    <table class="sidebar-table">
+                        <thead>
+                        <tr>
+                            <th>NOMBRE</th>
+                            <th>OPERACIONES</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span>TACNA</span>
+                            </td>
+                            <td class="center">
+                                <button class="button bg-red">
+                                    <i class="fa fa-trash"></i> ELIMINAR
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript">
+        function sidebarOptionTitlesClick(e) {
+            e.preventDefault();
+            this.classList.toggle("active");
+            const panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        }
+
+        const sidebarOptionTitles = document.getElementsByClassName("sidebar__option-title");
+        for (const sidebarOptionTitle of sidebarOptionTitles) {
+            sidebarOptionTitle.addEventListener("click", sidebarOptionTitlesClick);
+        }
+    </script>
+    <script>
+        const map = L.map('map').setView([46.8, 2.2], 6);
+        const baseLayer = L.tileLayer(' https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}');
+        map.addLayer(baseLayer);
+    </script>
+    <script src="{% static 'assets/js/leaflet-plugins.js' %}"></script>
+{% endblock %}

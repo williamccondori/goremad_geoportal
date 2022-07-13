@@ -1,0 +1,11 @@
+*.pyc
+*~
+__pycache__
+../_goremad_geoportal/venv
+db.sqlite3
+/static
+.DS_Store
+
+.idea
+.vscode
+.vs

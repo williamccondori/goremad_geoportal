@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>{% block title %}{% endblock %} | Infraestructura de Datos Espaciales del Gobierno Regional de Madre de
+        Dios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Gobierno Regional de Madre de Dios">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'libraries/leaflet/leaflet.css' %}"/>
+    <link rel="stylesheet" href="{% static 'libraries/leaflet_fullscreen/Control.FullScreen.css' %}"/>
+    <link rel="stylesheet" href="{% static 'libraries/leaflet_history/leaflet-history.css' %}"/>
+    <link rel="stylesheet" href="{% static 'libraries/font_awesome_4/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/geoportal.css' %}">
+
+</head>
+
+<body>
+<header>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer class="footer">
+</footer>
+<script src="{% static 'libraries/leaflet/leaflet.js' %}"></script>
+<script src="{% static 'libraries/leaflet_fullscreen/Control.FullScreen.js' %}"></script>
+<script src="{% static 'libraries/leaflet_history/leaflet-history.js' %}"></script>
+<script src="{% static 'libraries/leaflet_resetview/leaflet.resetview.js' %}"></script>
+
+{% block script %}{% endblock %}
+</body>
+
+</html>
